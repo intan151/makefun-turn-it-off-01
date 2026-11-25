@@ -18,6 +18,8 @@ LINE = (
 
 def main():
     assert 1 <= len(LINE) <= 199, "entry must be 1-199 characters"
+    assert "\n" not in LINE, "entry must be a single line"
+    assert "turning it off" in LINE.lower(), "entry must answer the brief"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(LINE)
